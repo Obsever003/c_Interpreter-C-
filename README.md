@@ -1,3 +1,111 @@
+
+### Toy-Style C Language Interpreter
+#### Project Overview
+This is a toy-level C language interpreter that implements the core features of the C language, including variable definition, arithmetic operations, control flow statements, function definition and invocation, input/output, etc. The interpreter has two versions: a Python version and a C language version.
+
+#### Supported Syntax
+1. Variable Definition and Assignment
+```c
+int a = 10;
+int b = 5;
+a = 20;
+```
+2. Arithmetic Operations
+```c
+int sum = a + b;
+int difference = a - b;
+int product = a * b;
+int quotient = a / b;
+```
+3. Control Flow Statements
+- if-else conditional statements
+```c
+if (a > b) {
+    print(1);
+} else {
+    print(0);
+}
+```
+- for loops
+```c
+for (int i = 0; i < 5; i = i + 1) {
+    print(i);
+}
+```
+4. Function Definition and Invocation
+```c
+def add(int x, int y) {
+    int sum = x + y;
+    return sum;
+}
+
+int result = add(a, b);
+print(result);
+```
+5. Input and Output
+```c
+int input_value = input();
+print(input_value);
+```
+
+#### Usage of the Python Version
+1. Run an external .c file
+```bash
+python mini_interpreter.py test.c
+```
+2. Use within Python code
+```python
+from mini_interpreter import Interpreter
+
+interpreter = Interpreter()
+code = """
+int a = 10;
+int b = 5;
+int c = a + b;
+print(c);
+"""
+interpreter.run(code)
+```
+
+#### Usage of the C Version
+Compile and run:
+```bash
+gcc -o c_interpreter c_interpreter.c
+./c_interpreter test.c
+```
+
+#### Version Comparison
+| Aspect                | Python Version                                                                 | C Language Version                                                              |
+|-----------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| Advantages            | Concise implementation, easy to understand and extend                          | Fast execution speed, input function works properly                            |
+| Disadvantages         | Slow execution speed, potential issues with the input function                 | Relatively complex code, higher difficulty in extension                        |
+| Applicable Scenarios  | Learning interpreter principles, rapid prototype development                  | Scenarios with high performance requirements, learning to implement interpreters in C |
+
+#### Limitations and Notes
+- Only integer type is supported; advanced features such as floating-point numbers, strings, and arrays are not included.
+- Function definitions must include a return statement.
+- The input function `input()` only supports integer input.
+- Advanced C language features like preprocessing directives, structs, and pointers are not supported.
+- This is only a toy-style interpreter, intended for learning and understanding the working principles of interpreters.
+
+#### Test Cases
+The project includes a `test.c` file for testing all features of the interpreter:
+- Basic variable definition and arithmetic operations
+- Function definition and invocation
+- if-else conditional statements
+- for loops
+- Input function
+
+#### Extension Suggestions
+If you want to extend this interpreter, consider the following directions:
+- Add support for floating-point numbers
+- Implement string type and related operations
+- Add support for arrays and pointers
+- Implement more standard library functions
+- Optimize the syntax parser to support more C language features
+
+
+
 # 玩具版 C 语言解释器
 
 ## 项目简介
